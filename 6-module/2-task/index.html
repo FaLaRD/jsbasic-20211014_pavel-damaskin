@@ -24,6 +24,10 @@
     });
 
     holder.append(card.elem);
+
+    document.querySelector('.card').addEventListener('product-add', ({ detail: id }) => {
+      console.log(id);
+    })
   </script>
 </body>
 
