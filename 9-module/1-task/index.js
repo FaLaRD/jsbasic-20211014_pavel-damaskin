@@ -1,3 +1,9 @@
 export default function promiseClick(button) {
-  // ваш код...
+  const promise = new Promise((resolve, reject) => {
+    button.addEventListener('click', (e) => {
+      resolve(e);
+    }, { once: true });
+  });
+
+  return promise;
 }
