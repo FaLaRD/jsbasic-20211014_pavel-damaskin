@@ -52,7 +52,7 @@ export default class ProductGrid {
       }
     }
 
-    if (this.filters['maxSpiciness']) {
+    if (isFinite(this.filters['maxSpiciness'])) {
       if (product['spiciness'] > this.filters['maxSpiciness']) {
         return false;
       }

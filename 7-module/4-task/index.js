@@ -32,6 +32,7 @@ export default class StepSlider {
 
     this._renderSteps();
     this._setThumbPosition();
+    this._placeThumb();
 
     this._root.addEventListener('click', this._handleClick);
     this._thumb.addEventListener('pointerdown', this._handlePointerDown);

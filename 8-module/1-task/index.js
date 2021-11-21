@@ -21,7 +21,9 @@ export default class CartIcon {
           <span class="cart-icon__price">€${cart.getTotalPrice().toFixed(2)}</span>
         </div>`;
 
-      this._elemScrolledPosition = this.elem.getBoundingClientRect().top + window.pageYOffset;
+      if (!this._elemScrolledPosition) {
+        this._elemScrolledPosition = this.elem.getBoundingClientRect().top + window.pageYOffset;
+      }
 
       this.updatePosition();
 
