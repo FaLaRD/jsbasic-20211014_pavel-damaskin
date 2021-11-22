@@ -2,12 +2,12 @@ import createElement from '../../assets/lib/create-element.js';
 
 export default class ProductCard {
   constructor(product) {
-    this._elem = this.createNode(product);
+    this._root = this.createNode(product);
     this.add2cart(product.id);
   }
 
   get elem() {
-    return this._elem;
+    return this._root;
   }
 
   createNode({ name, price, image }) {
@@ -28,7 +28,7 @@ export default class ProductCard {
   }
 
   add2cart(id) {
-    document.addEventListener('click', ({ target, currentTarget }) => {
+    this._root.addEventListener('click', ({ target}) => {
       const add2cartBtn = target.closest('.card__button');
 
       if (!add2cartBtn) {
@@ -40,7 +40,7 @@ export default class ProductCard {
         bubbles: true,
       });
 
-      this._elem.dispatchEvent(evt);
+      this._root.dispatchEvent(evt);
     });
   }
 }
